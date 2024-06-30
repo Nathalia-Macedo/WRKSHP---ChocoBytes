@@ -1,0 +1,36 @@
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #f7f7f7;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .banner-text {
+    max-width: 50%;
+    font-family: 'Poppins', sans-serif; /* Exemplo de fonte do Google Fonts */
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .banner-img {
+    max-width: 40%;
+  }
+  
+  @media (max-width: 768px) {
+    .banner {
+      flex-direction: column;
+    }
+  
+    .banner-text {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .banner-img {
+      max-width: 100%;
+    }
+  }
+  
