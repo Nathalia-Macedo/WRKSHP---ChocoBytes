@@ -1,51 +1,27 @@
-
 import React from 'react';
-import Card from '../ChocoCard/Card'; // Caminho para o componente Card
+import Card from '../ChocoCard/Card';
+import './Catalogo.css';
+import { useChocolates } from '../../Context/produtos';
 import Maracuja from '../../Assets/maracuja.png';
-import Cake from '../../Assets/cakeStranberry.png'
-import Buffet from '../../Assets/Buffet.png'
+import Cake from '../../Assets/cakeStranberry.png';
+import Buffet from '../../Assets/Buffet.png';
+import Tiramisu from '../../Assets/tiramisu.png'
 import Limao from '../../Assets/Limão.png';
-import './Catalogo.css'; // Importe o arquivo CSS com os estilos
+import cakeRed from '../../Assets/cakeRed.png'
+import cakeDourado from '../../Assets/cakeDourado.png'
+import pavlova from '../../Assets/pavlova.png'
 
 function Catalogo() {
-  const chocolates = [
-    {
-      id: 1,
-      tipo: 'Peanut Choco',
-      preco: 10.99,
-      descricao: 'Chocolate cremoso, ao leite, com recheio de amendoin, castanhas e avelãs! Uma explosão de sabores!',
-      imagem: Maracuja
-    },
-    {
-      id: 2,
-      tipo: 'Lemon Dream',
-      preco: 12.99,
-      descricao: 'Chocolate intenso e amargo, ideal para os amantes do cacau. Com recheio de Mousse de Limão',
-      imagem: Limao
-    },
-    {
-        id: 3,
-        tipo: 'Buffet dos Sonhos',
-        preco: 109.99,
-        descricao: 'Aproveite os melhores chocolates da casa, doces finos de chocolate amargo, Maracujá, limão, fodue doce e muito mais!',
-        imagem: Buffet
-      },
-      {
-          id: 3,
-          tipo: 'Bolo de Morango',
-          preco: 129.99,
-          descricao: 'Bolo Tentação de Morango: Bolo de chocolate ao leite com camada de chantily, ganache e morangos decorados!',
-          imagem: Cake
-        }
-    // Adicione mais chocolates conforme necessário
-  ];
+  const { chocolates } = useChocolates();
+  const primeirosOitoChocolates = chocolates.slice(0, 8);
 
   return (
-    <div className="catalogo"> {/* Aplica a classe 'catalogo' para o contêiner dos cards */}
-      {chocolates.map(chocolate => (
+    <div className="catalogo">
+      {primeirosOitoChocolates.map(chocolate => (
         <Card
           key={chocolate.id}
-          image={chocolate.imagem}
+          id={chocolate.id}
+          image={getImageByTipo(chocolate.tipo)}  // Substitua por getImageByTipo ou diretamente por chocolate.imagem
           tipo={chocolate.tipo}
           preco={chocolate.preco}
           descricao={chocolate.descricao}
@@ -53,6 +29,30 @@ function Catalogo() {
       ))}
     </div>
   );
+}
+
+// Função auxiliar para obter a imagem com base no tipo de chocolate
+function getImageByTipo(tipo) {
+  switch (tipo) {
+    case 'Peanut Choco':
+      return Maracuja;
+    case 'Lemon Dream':
+      return Limao;
+    case 'Buffet dos Sonhos':
+      return Buffet;
+    case 'Bolo de Morango':
+      return Cake;
+      case 'Bolo Dourado':
+      return cakeDourado;
+      case 'Pavlova':
+        return pavlova;
+      case 'Bolo de Frutas Vermelhas':
+          return cakeRed;
+      case 'Tiramisu':
+            return Tiramisu;
+    default:
+      return '';
+  }
 }
 
 export default Catalogo;

@@ -1,16 +1,17 @@
-import Header from "../Components/Header/Header";
-import Catalogo from "../Components/Catalogo/Catalogo";
-import Session from "../Components/SessionAction/Session";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import PageCatalogo from '../Pages/Catalogo/index';
+import Home from '../Pages/Home/Home';
 
-function App(){
-return(
-
-    <>
-    <Header/>
-    <Session/>
-    <Catalogo/>
-    </>
-)
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path='/catalogo' element={<PageCatalogo />} />
+        <Route path='/' element={<Home />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FaShoppingCart, FaHeart,FaBars, FaTimes,FaBuilding } from 'react-icons/fa';
 import logo from '../../Assets/Artboard_2-removebg-preview.png';
 import './Header.css';
@@ -16,7 +17,9 @@ function Header() {
       <nav className={menuOpen ? 'active' : ''}>
         <ul>
           <li>
-            <FaBars /> Catálogo
+            
+            <FaBars /> 
+            <Link to='/catalogo'>Catálogo</Link>
           </li>
           <li>
             <FaHeart /> Favoritos

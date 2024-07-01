@@ -1,0 +1,5 @@
+Aqui, tem uma descrição detalhada de todas as funcionalidades nas páginas:
+1. Catálogo
+2. Favoritos
+3. Sobre nós
+4. Carrinho

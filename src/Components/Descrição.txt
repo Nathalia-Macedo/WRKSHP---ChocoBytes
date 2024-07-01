@@ -1,0 +1,5 @@
+Aqui, está descrito as principais funcionalidades dos componentes:
+1. Card de chocolate
+2.Header
+3.Catálogo
+4. Primeira Sessão
