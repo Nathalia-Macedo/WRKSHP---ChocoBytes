@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaShoppingCart, FaHeart,FaBars, FaTimes,FaBuilding } from 'react-icons/fa';
+import { FaShoppingCart, FaHeart,FaBars, FaTimes,FaBuilding,FaHome } from 'react-icons/fa';
 import logo from '../../Assets/Artboard_2-removebg-preview.png';
 import './Header.css';
 
@@ -17,18 +17,20 @@ function Header() {
       <nav className={menuOpen ? 'active' : ''}>
         <ul>
           <li>
-            
+           <FaHome/> <Link className='link' to={'/'}>Home</Link>
+            </li>
+          <li>
             <FaBars /> 
-            <Link to='/catalogo'>Catálogo</Link>
+            <Link className='link' to='/catalogo'>Catálogo</Link>
           </li>
           <li>
-            <FaHeart /> Favoritos
+            <FaHeart /> <Link className='link' to='/favoritos'>Favoritos</Link>
           </li>
           <li>
-            <FaShoppingCart /> Carrinho
+            <FaShoppingCart /> <Link className='link' to='/carrinho'>Carrinho</Link>
           </li>
           <li>
-            <FaBuilding /> Sobre nós
+            <FaBuilding /> <Link className='link' to='/sobreNos'>Sobre Nós</Link>
           </li>
         </ul>
       </nav>

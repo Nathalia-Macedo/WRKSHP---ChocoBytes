@@ -8,6 +8,19 @@ header {
     background: linear-gradient(to right, #D2691E,#585654);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+
+ .link{
+  text-decoration: none;
+  color: black;
+  margin-left: 5px;
+ }
+
+ li:hover{
+  color:white;
+ }
+ .link:hover{
+  color:white;
+ }
   
   .logo {
     width: 120px;

@@ -1,0 +1,60 @@
+.search-input-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* Ajuste conforme necessário */
+    margin: 0 auto; /* Centraliza o campo de busca em telas maiores */
+    padding: 10px; /* Adiciona padding ao contêiner */
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* Ajuste o padding para dar espaço para o ícone */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px; /* Ajusta a posição do ícone para telas menores */
+    transform: translateY(-50%);
+    color: #888; /* Ajuste a cor conforme necessário */
+    pointer-events: none; /* Impede que o ícone interfira na interação com o input */
+  }
+  
+  /* Media queries para responsividade */
+  @media (max-width: 768px) {
+    .search-input-container {
+      max-width: 300px; /* Ajusta o tamanho máximo para telas menores */
+    }
+  
+    .search-input {
+      font-size: 14px; /* Ajusta o tamanho da fonte para telas menores */
+      padding: 8px 35px 8px 8px; /* Ajusta o padding para telas menores */
+    }
+  
+    .search-icon {
+      right: 10px; /* Ajusta a posição do ícone para telas menores */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .search-input-container {
+      max-width: 100%; /* Usa 100% da largura para telas muito pequenas */
+        justify-content: center;
+        padding: 1px;
+        display: flex;
+    }
+  
+    .search-input {
+        width: 90%;
+      font-size: 12px; /* Ajusta o tamanho da fonte para telas muito pequenas */
+      padding: 6px 30px 6px 6px; /* Ajusta o padding para telas muito pequenas */
+    }
+  
+    .search-icon {
+      right: 8px; /* Ajusta a posição do ícone para telas muito pequenas */
+    }
+  }
+  
