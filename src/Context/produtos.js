@@ -1,12 +1,13 @@
-import React, { createContext, useContext, useState } from 'react';
-import cakeRed from '../Assets/cakeRed.png'
-import buffet from '../Assets/Buffet.png'
-import pavlova from '../Assets/pavlova.png'
-import tiramisu from '../Assets/tiramisu.png'
-import Maracuja from '../Assets/maracuja.png'
-import Limao from '../Assets/Limão.png'
-import cakeDourado from '../Assets/cakeDourado.png'
-import cakeStranberry from '../Assets/cakeStranberry.png'
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import cakeRed from '../Assets/cakeRed.png';
+import buffet from '../Assets/Buffet.png';
+import pavlova from '../Assets/pavlova.png';
+import tiramisu from '../Assets/tiramisu.png';
+import Maracuja from '../Assets/maracuja.png';
+import Limao from '../Assets/Limão.png';
+import cakeDourado from '../Assets/cakeDourado.png';
+import cakeStrawberry from '../Assets/cakeStranberry.png';
+
 // Cria o contexto
 const ChocolatesContext = createContext();
 
@@ -15,6 +16,7 @@ export const useChocolates = () => useContext(ChocolatesContext);
 
 // Provedor do contexto
 export const ChocolatesProvider = ({ children }) => {
+  // Estado inicial dos chocolates
   const [chocolates, setChocolates] = useState([
     {
       id: 1,
@@ -42,17 +44,15 @@ export const ChocolatesProvider = ({ children }) => {
       tipo: 'Bolo de Morango',
       preco: 129.99,
       descricao: 'Bolo Tentação de Morango: Bolo de chocolate ao leite com camada de chantilly, ganache e morangos decorados!',
-      imagem: cakeStranberry
-    }
-    ,
+      imagem: cakeStrawberry
+    },
     {
       id: 5,
       tipo: 'Bolo de Frutas Vermelhas',
       preco: 159.99,
       descricao: 'Bolo Tentação de Morango: Bolo de chocolate ao leite com camada de chantilly, ganache e morangos decorados!',
       imagem: cakeRed
-    }
-    ,
+    },
     {
       id: 6,
       tipo: 'Bolo Dourado',
@@ -66,7 +66,8 @@ export const ChocolatesProvider = ({ children }) => {
       preco: 159.99,
       descricao: 'Bolo Tentação de Morango: Bolo de chocolate ao leite com camada de chantilly, ganache e morangos decorados!',
       imagem: pavlova
-    },{
+    },
+    {
       id: 8,
       tipo: 'Tiramisu',
       preco: 59.99,
@@ -75,9 +76,21 @@ export const ChocolatesProvider = ({ children }) => {
     }
   ]);
 
-  const [favoritos, setFavoritos] = useState([]);
-  const [carrinho, setCarrinho] = useState([]);
+  // Estado inicial do carrinho recuperado do localStorage
+  const [carrinho, setCarrinho] = useState(() => {
+    const localData = localStorage.getItem('carrinho');
+    return localData ? JSON.parse(localData) : [];
+  });
 
+  // Efeito para atualizar localStorage sempre que carrinho mudar
+  useEffect(() => {
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+  }, [carrinho]);
+
+  // Estado dos favoritos
+  const [favoritos, setFavoritos] = useState([]);
+
+  // Funções para adicionar e remover favoritos
   const adicionarFavorito = (chocolate) => {
     setFavoritos((prevFavoritos) => [...prevFavoritos, chocolate]);
   };
@@ -86,6 +99,7 @@ export const ChocolatesProvider = ({ children }) => {
     setFavoritos((prevFavoritos) => prevFavoritos.filter((item) => item.id !== id));
   };
 
+  // Funções para adicionar e remover do carrinho
   const adicionarAoCarrinho = (chocolate) => {
     setCarrinho((prevCarrinho) => [...prevCarrinho, chocolate]);
   };

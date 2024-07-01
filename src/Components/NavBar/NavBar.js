@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaSearch } from 'react-icons/fa';
 import './NavBar.css'; // Estilização do componente
 
 function SearchInput() {

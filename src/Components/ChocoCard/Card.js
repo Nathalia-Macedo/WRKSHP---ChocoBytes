@@ -35,8 +35,7 @@ function Card({ id, image, tipo, preco, descricao }) {
           style={{ color: isFavorito ? 'red' : 'black', cursor: 'pointer' }}
         /></h2>
         <p className="card-price">Preço: R${preco.toFixed(2)}</p>
-        <p className="card-description">{descricao}</p>
-      </div>
+        <p className="card-description">{descricao}</p>      </div>
       <button onClick={handleAddToCart} className="add-to-cart-button">
         Adicionar ao Carrinho
       </button>

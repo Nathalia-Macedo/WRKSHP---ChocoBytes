@@ -78,6 +78,7 @@ header {
     nav.active {
       transform: translateY(0);
       opacity: 1;
+      z-index: 2;
       pointer-events: auto;
     }
   
