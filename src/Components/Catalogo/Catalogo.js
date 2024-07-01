@@ -3,6 +3,7 @@ import Card from '../ChocoCard/Card';
 import './Catalogo.css';
 import { useChocolates } from '../../Context/produtos';
 import Maracuja from '../../Assets/maracuja.png';
+import TortaLemon from '../../Assets/tortaLemon.png'
 import Cake from '../../Assets/cakeStranberry.png';
 import Buffet from '../../Assets/Buffet.png';
 import Tiramisu from '../../Assets/tiramisu.png'
@@ -13,11 +14,11 @@ import pavlova from '../../Assets/pavlova.png'
 
 function Catalogo() {
   const { chocolates } = useChocolates();
-  const primeirosOitoChocolates = chocolates.slice(0, 8);
+  const primeirosNoveChocolates = chocolates.slice(0, 9);
 
   return (
     <div className="catalogo">
-      {primeirosOitoChocolates.map(chocolate => (
+      {primeirosNoveChocolates.map(chocolate => (
         <Card
           key={chocolate.id}
           id={chocolate.id}
@@ -50,6 +51,8 @@ function getImageByTipo(tipo) {
           return cakeRed;
       case 'Tiramisu':
             return Tiramisu;
+      case 'Torta de Limão':
+            return TortaLemon;
     default:
       return '';
   }

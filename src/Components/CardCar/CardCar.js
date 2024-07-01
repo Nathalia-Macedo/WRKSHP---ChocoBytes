@@ -1,9 +1,10 @@
 import React from 'react';
 import './CardCar.css';
 import { useChocolates } from '../../Context/produtos';
-import { ChocolatesProvider } from '../../Context/produtos';
+
 function CardCar() {
-  const { chocolates, favoritos, carrinho } = useChocolates();
+  const { carrinho, removerDoCarrinho } = useChocolates();
+
   return (
     <div className="carrinho-container">
       {carrinho.length === 0 ? (
@@ -11,6 +12,7 @@ function CardCar() {
       ) : (
         carrinho.map(item => (
           <div key={item.id} className="carrinho-card">
+            <button className="remove-button" onClick={() => removerDoCarrinho(item.id)}>X</button>
             <img src={item.imagem} alt={item.tipo} className="carrinho-card-image" />
             <div className="carrinho-card-content">
               <h2 className="carrinho-card-title">{item.tipo}</h2>

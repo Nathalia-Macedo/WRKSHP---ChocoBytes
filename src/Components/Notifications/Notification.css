@@ -1,0 +1,16 @@
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000; /* Para garantir que esteja acima de outros conteúdos */
+    max-width: 300px; /* Largura máxima da notificação */
+    text-align: center;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  @media (max-width: 768px) {
+    .notification {
+      font-size: 14px; /* Tamanho da fonte ajustável para telas menores */
+      max-width: 250px; /* Largura máxima reduzida para telas menores */
+    }
+  }

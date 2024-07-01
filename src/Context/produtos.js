@@ -1,5 +1,8 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import cakeRed from '../Assets/cakeRed.png';
+import cupcake from '../Assets/cupcake.png';
+import cheesecake from '../Assets/cheesecake.png'
+import TortaLemon from '../Assets/tortaLemon.png'
 import buffet from '../Assets/Buffet.png';
 import pavlova from '../Assets/pavlova.png';
 import tiramisu from '../Assets/tiramisu.png';
@@ -73,6 +76,24 @@ export const ChocolatesProvider = ({ children }) => {
       preco: 59.99,
       descricao: 'Bolo Tentação de Morango: Bolo de chocolate ao leite com camada de chantilly, ganache e morangos decorados!',
       imagem: tiramisu
+    },{
+      id: 9,
+      tipo: 'Torta de Limão',
+      preco: 59.99,
+      descricao: 'Torta de limão siciliano, com massa de biscoito!',
+      imagem: TortaLemon
+    },{
+      id: 10,
+      tipo: 'Cheesecake de Frutas Vermelhas',
+      preco: 59.99,
+      descricao: 'Cheesecake com calda e decoração de frutas vermelhas!',
+      imagem: cheesecake
+    },{
+      id: 11,
+      tipo: 'Cupcake',
+      preco: 59.99,
+      descricao: 'Cupcake de abacaxi com chantily cremoso!',
+      imagem: cupcake
     }
   ]);
 
@@ -116,6 +137,7 @@ export const ChocolatesProvider = ({ children }) => {
       adicionarFavorito,
       removerFavorito,
       carrinho,
+      setCarrinho, // Adicionei setCarrinho aqui
       adicionarAoCarrinho,
       removerDoCarrinho
     }}>
