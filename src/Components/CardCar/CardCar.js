@@ -3,7 +3,7 @@ import './CardCar.css';
 import { useChocolates } from '../../Context/produtos';
 
 function CardCar() {
-  const { carrinho, removerDoCarrinho } = useChocolates();
+  const { carrinho, removerDoCarrinho, incrementarQuantidade, decrementarQuantidade } = useChocolates();
 
   return (
     <div className="carrinho-container">
@@ -17,7 +17,14 @@ function CardCar() {
             <div className="carrinho-card-content">
               <h2 className="carrinho-card-title">{item.tipo}</h2>
               <p className="carrinho-card-description">{item.descricao}</p>
-              <p className="carrinho-card-price">Preço: R${item.preco.toFixed(2)}</p>
+              <p className="carrinho-card-price">
+                Preço: R${(item.preco * item.quantidade).toFixed(2)}
+              </p>
+              <div className="quantity-controls">
+                <button className="quantity-button" onClick={() => decrementarQuantidade(item.id)}>-</button>
+                <span className="quantity">{item.quantidade}</span>
+                <button className="quantity-button" onClick={() => incrementarQuantidade(item.id)}>+</button>
+              </div>
             </div>
           </div>
         ))

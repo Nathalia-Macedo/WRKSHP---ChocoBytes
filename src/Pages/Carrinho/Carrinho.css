@@ -1,83 +1,112 @@
 .carrinho-info-bar {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 1.2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.carrinho-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.carrinho-card {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carrinho-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.remove-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  background: darkred;
+}
+
+.carrinho-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.carrinho-card-content {
+  padding: 16px;
+}
+
+.carrinho-card-title {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.carrinho-card-description {
+  color: #444;
+  line-height: 1.4;
+}
+
+.carrinho-card-price {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+  .carrinho-info-bar {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .carrinho-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .carrinho-card {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-    overflow: hidden;
-    font-family: "Poppins", sans-serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .carrinho-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .remove-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: red;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-  
-  .remove-button:hover {
-    background: darkred;
-  }
-  
-  .carrinho-card-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
   .carrinho-card-content {
-    padding: 16px;
+    padding: 12px;
   }
-  
+
   .carrinho-card-title {
-    font-size: 1.5rem;
-    margin-bottom: 8px;
-    color: #333;
+    font-size: 1.25rem;
   }
-  
+
   .carrinho-card-description {
-    color: #444;
-    line-height: 1.4;
+    font-size: 0.875rem;
   }
-  
+
   .carrinho-card-price {
-    font-size: 1.2rem;
-    color: #666;
+    font-size: 1rem;
   }
-  
-  
+
+  .remove-button {
+    width: 20px;
+    height: 20px;
+    font-size: 0.875rem;
+  }
+}
