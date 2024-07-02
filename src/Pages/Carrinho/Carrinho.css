@@ -110,3 +110,24 @@
     font-size: 0.875rem;
   }
 }
+/* Carrinho.css */
+
+.empty-carrinho {
+  text-align: center; /* Centraliza o texto */
+  margin-top: 20px; /* Espaço superior */
+}
+
+.btn-voltar-catalogo {
+  padding: 10px 20px; /* Espaçamento interno */
+  background-color: #f0f0f0; /* Cor de fundo */
+  border: none; /* Sem borda */
+  color: #333; /* Cor do texto */
+  cursor: pointer; /* Cursor ao passar por cima */
+  text-decoration: none; /* Sem decoração de texto */
+  font-size: 16px; /* Tamanho da fonte */
+  transition: background-color 0.3s ease; /* Transição suave da cor de fundo */
+}
+
+.btn-voltar-catalogo:hover {
+  background-color: #ddd; /* Cor de fundo ao passar por cima */
+}

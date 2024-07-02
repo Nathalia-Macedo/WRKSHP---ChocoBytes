@@ -5,6 +5,7 @@ import Home from '../Pages/Home/Home';
 import SobreNos from '../Pages/SobreNos/sobreNos';
 import Carrinho from '../Pages/Carrinho/Carrinho';
 import { ChocolatesProvider } from '../Context/produtos';
+import Favoritos from '../Pages/Favoritos/Favoritos';
 import Notification from '../Components/Notifications/Notification';
 
 function App() {
@@ -25,9 +26,10 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/carrinho' element={<Carrinho />} />
           <Route path='/sobreNos' element={<SobreNos />} />
+          <Route path='/favoritos' element={<Favoritos />} />
+
         </Routes>
       </Router>
-      <Notification show={notification.show} message={notification.message} />
     </ChocolatesProvider>
   );
 }

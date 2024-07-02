@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Carrinho.css';
+import { Link } from 'react-router-dom';
 import CardCar from '../../Components/CardCar/CardCar';
 import { useChocolates } from '../../Context/produtos';
 
@@ -24,7 +25,6 @@ function Carrinho() {
   
     calcularPrecoTotal();
   }, [carrinho]);
-  
 
   const quantidadeItens = carrinho.length;
 
@@ -34,7 +34,17 @@ function Carrinho() {
         <span>Quantidade de itens: {quantidadeItens}</span>
         <span>Total: R${precoTotal.toFixed(2)}</span>
       </div>
-      <CardCar />
+
+      {carrinho.length === 0 ? (
+        <div className="empty-carrinho">
+          <p>Seu carrinho está vazio.</p>
+          <Link to="/catalogo">
+              <button className="btn-voltar-catalogo">Voltar ao Catálogo</button>
+            </Link>  
+          </div>
+      ) : (
+        <CardCar />
+      )}
     </>
   );
 }

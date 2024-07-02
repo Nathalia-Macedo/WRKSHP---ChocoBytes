@@ -1,0 +1,42 @@
+.favoritos-container {
+    padding: 20px;
+  }
+  
+  .favoritos-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centraliza os cards horizontalmente */
+  }
+  /* Favoritos.css */
+
+.empty-favoritos {
+    text-align: center; /* Centraliza o texto */
+    margin-top: 20px; /* Espaço superior */
+  }
+  
+  .btn-voltar-catalogo {
+    padding: 10px 20px; /* Espaçamento interno */
+    background-color: #f0f0f0; /* Cor de fundo */
+    border: none; /* Sem borda */
+    color: #333; /* Cor do texto */
+    cursor: pointer; /* Cursor ao passar por cima */
+    text-decoration: none; /* Sem decoração de texto */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: background-color 0.3s ease; /* Transição suave da cor de fundo */
+  }
+  
+  .btn-voltar-catalogo:hover {
+    background-color: #ddd; /* Cor de fundo ao passar por cima */
+  }
+  
+  
+  @media (max-width: 768px) {
+    .favoritos-list {
+      flex-direction: column;
+      align-items: center; /* Centraliza os cards verticalmente em telas menores */
+    }
+  }
+  
+  
+  

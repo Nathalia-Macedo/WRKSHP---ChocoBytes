@@ -39,7 +39,14 @@ export const ChocolatesProvider = ({ children }) => {
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
   }, [carrinho]);
 
-  const [favoritos, setFavoritos] = useState([]);
+  const [favoritos, setFavoritos] = useState(() => {
+    const localFavoritos = localStorage.getItem('favoritos');
+    return localFavoritos ? JSON.parse(localFavoritos) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('favoritos', JSON.stringify(favoritos));
+  }, [favoritos]);
 
   const adicionarFavorito = (chocolate) => {
     setFavoritos((prevFavoritos) => [...prevFavoritos, chocolate]);
@@ -57,8 +64,6 @@ export const ChocolatesProvider = ({ children }) => {
       return novoCarrinho;
     });
   };
-  
-  
 
   const removerDoCarrinho = (id) => {
     setCarrinho((prevCarrinho) => prevCarrinho.filter((item) => item.id !== id));
@@ -85,10 +90,11 @@ export const ChocolatesProvider = ({ children }) => {
   return (
     <ChocolatesContext.Provider value={{
       chocolates,
-      setChocolates,
-      favoritos,
       adicionarFavorito,
       removerFavorito,
+      setChocolates,
+      favoritos,
+      setFavoritos,
       carrinho,
       setCarrinho,
       adicionarAoCarrinho,
