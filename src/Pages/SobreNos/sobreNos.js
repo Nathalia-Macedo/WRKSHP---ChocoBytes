@@ -24,7 +24,6 @@ function SobreNos() {
           </div>
         </div>
         <div className="card1">
-          <img src={eu} alt="eu" />
           <div className="card-content1">
             <p>
               A ChocoBytes foi pensada e idealizada por Nathalia de Macedo
