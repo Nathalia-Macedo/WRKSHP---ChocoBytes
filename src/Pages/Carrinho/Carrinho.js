@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Carrinho.css';
+import Header from '../../Components/Header/Header';
 import { Link } from 'react-router-dom';
 import CardCar from '../../Components/CardCar/CardCar';
 import { useChocolates } from '../../Context/produtos';
@@ -30,6 +31,7 @@ function Carrinho() {
 
   return (
     <>
+    <Header/>
       <div className="carrinho-info-bar">
         <span>Quantidade de itens: {quantidadeItens}</span>
         <span>Total: R${precoTotal.toFixed(2)}</span>

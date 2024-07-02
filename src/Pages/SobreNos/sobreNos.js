@@ -11,7 +11,6 @@ function SobreNos() {
       <Header />
       <div className="container">
         <div className="card1">
-          <img src={logo} alt="logo" />
           <div className="card-content1">
             <p>
               Na ChocoBytes, mergulhamos no mundo encantador dos chocolates
